@@ -313,7 +313,7 @@ local ImageJob = function(item, ctx, fn)
             error("preloading failed: " .. err)
         end
     end
-
+ 
     print "waiting for start"
     local starts = fn.wait_t(ctx.starts)
     local duration = ctx.ends - starts
@@ -637,3 +637,29 @@ function node.render()
     Config.apply_transform()
     Queue.tick()
 end
+
+
+local clients = {}
+node.event("connect", function(client, path)
+    clients[client] = true -- add to list of connected clients
+end)
+node.event("disconnect", function(client)
+    clients[client] = nil -- remove from list
+end)
+local function send_to_all_clients(data)
+    for client, _ in pairs(clients) do
+        node.client_write(client, data)
+    end
+end
+
+-- Then later at any point use for example the following.
+-- JSON for encoding makes it easy to send structured data and the
+-- result will end up being a single line, ending in \n sent to all
+-- connected TCP clients.
+local json = require "json"
+send_to_all_clients(json.encode({"foo" = "bar"}))
+
+
+
+
+
