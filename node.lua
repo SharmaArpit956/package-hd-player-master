@@ -632,7 +632,7 @@ end)()
 util.set_interval(1, node.gc)
 
 function node.render()
-    -- print("--- frame", sys.now())
+    -- print("--- frame", sys.now()) gg
     gl.clear(0, 0, 0, 1)
     Config.apply_transform()
     Queue.tick()
