@@ -37,7 +37,7 @@ end
 util.auto_loader(_G)
 
 function node.render()
-    gl.clear(1,1,1,1)
+    gl.clear(0,0,1,1)
     
     local font = resource.load_font("silkscreen.ttf")
     font:write(120, 550, "THIS WORKS", 100, 1,0,0,1)
