@@ -650,6 +650,7 @@ end)
 node.event("disconnect", function(client)
     clients[client] = nil -- remove from list
 end)
+
 local function send_to_all_clients(data)
     for client, _ in pairs(clients) do
         node.client_write(client, data)
