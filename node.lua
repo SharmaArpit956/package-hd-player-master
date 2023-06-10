@@ -1,4 +1,4 @@
-local connected_flag = true
+local connected_flag = false
 
 gl.setup(1024, 768)
 function readln()
@@ -11,8 +11,7 @@ end
 
 node.event("connect", function(client)
 
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120,250, "CONNECTED", 25, 1,0,0,1)
+    connected_flag= true
 
 
     local handler = coroutine.wrap(echo)
