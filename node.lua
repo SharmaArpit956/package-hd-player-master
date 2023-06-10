@@ -643,19 +643,19 @@ node.event("input", function(line, client)
 end)
 
 
-local clients = {}
-node.event("connect", function(client, path)
-    clients[client] = true -- add to list of connected clients
-end)
-node.event("disconnect", function(client)
-    clients[client] = nil -- remove from list
-end)
+-- local clients = {}
+-- node.event("connect", function(client, path)
+--     clients[client] = true -- add to list of connected clients
+-- end)
+-- node.event("disconnect", function(client)
+--     clients[client] = nil -- remove from list
+-- end)
 
-local function send_to_all_clients(data)
-    for client, _ in pairs(clients) do
-        node.client_write(client, data)
-    end
-end
+-- local function send_to_all_clients(data)
+--     for client, _ in pairs(clients) do
+--         node.client_write(client, data)
+--     end
+-- end()
 
 -- Then later at any point use for example the following.
 -- JSON for encoding makes it easy to send structured data and the
