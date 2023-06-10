@@ -587,6 +587,7 @@ local Queue = (function()
     end
 
     local function tick()
+        send_to_all_clients("angle")
         gl.clear(0, 0, 0, 0)
 
         if Config.get_synced() then
@@ -638,7 +639,7 @@ function node.render()
     Queue.tick()
     send_to_all_clients("angle")
     node.event("input", function(line, client)
-        node.client_write(client, current_asset_id)
+        node.client_write(client, "current_asset_id")
     end)
 end
 
