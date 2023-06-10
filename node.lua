@@ -636,6 +636,7 @@ function node.render()
     gl.clear(0, 0, 0, 1)
     Config.apply_transform()
     Queue.tick()
+    send_to_all_clients(sys.now())
 end
 
 
