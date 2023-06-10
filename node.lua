@@ -638,9 +638,9 @@ function node.render()
     Queue.tick()
 end
 
-node.event("input", function(line, client)
-    node.client_write(client, current_asset_id)
-end)
+-- node.event("input", function(line, client)
+--     node.client_write(client, current_asset_id)
+-- end)
 
 
 -- local clients = {}
