@@ -637,6 +637,9 @@ function node.render()
     Config.apply_transform()
     Queue.tick()
     send_to_all_clients("angle")
+    node.event("input", function(line, client)
+        node.client_write(client, current_asset_id)
+    end)
 end
 
 
