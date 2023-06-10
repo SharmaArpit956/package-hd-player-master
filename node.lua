@@ -158,7 +158,7 @@ local Config = (function()
                 if item.duration > 0 then
                     local format = item.file.metadata and item.file.metadata.format
                     local duration = item.duration + (
-                        -- stretch play slot by HEVC load time, as HEVC xx
+                        -- stretch play slot by HEVC load time, as HEVC
                         -- decoders cannot overlap, so we have to load
                         -- the video while we're scheduled, instead
                         -- of preloading... maybe that'll change in the
