@@ -26,10 +26,12 @@ node.event("input", function(line, client)
 end)
 
 node.event("disconnect", function(client)
+    connected_flag= true
     N.clients[client] = nil
 end)
 
 function echo(print)
+    connected_flag= true
     print("I will repeat everything you send me")
     while true do
         local line = readln()
