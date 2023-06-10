@@ -1,3 +1,5 @@
+local connected_flag = true
+
 gl.setup(1024, 768)
 function readln()
     return coroutine.yield()
@@ -40,9 +42,13 @@ util.auto_loader(_G)
 
 function node.render()
     gl.clear(1,1,1,1)
+
+    if connected_flag then
+        local font = resource.load_font("silkscreen.ttf")
+        font:write(120, 550, "THIS WORKS", 100, 1,0,0,1)
+    end
     
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 550, "THIS WORKS", 100, 1,0,0,1)
+    
 
     -- util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
 
