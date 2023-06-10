@@ -40,7 +40,7 @@ function node.render()
     gl.clear(1,1,1,1)
     
     local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
+    font:write(120, 550, "THIS WORKS", 100, 1,0,0,1)
 
     -- util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
 
