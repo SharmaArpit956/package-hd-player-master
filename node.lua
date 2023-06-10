@@ -587,7 +587,6 @@ local Queue = (function()
     end
 
     local function tick()
-        send_to_all_clients("angle")
         gl.clear(0, 0, 0, 0)
 
         if Config.get_synced() then
