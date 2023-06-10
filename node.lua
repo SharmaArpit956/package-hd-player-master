@@ -637,3 +637,9 @@ function node.render()
     Config.apply_transform()
     Queue.tick()
 end
+
+
+local clients = {}
+node.event("connect", function(client, path)
+    clients[client] = true -- add to list of connected clients
+end)
