@@ -9,6 +9,8 @@ end
 
 node.event("connect", function(client)
 
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120,250, "CONNECTED", 25, 1,0,0,1)
 
 
     local handler = coroutine.wrap(echo)
