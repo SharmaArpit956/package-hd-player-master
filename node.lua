@@ -10,9 +10,8 @@ end
 
 node.event("connect", function(client)
 
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
-    
+
+
     local handler = coroutine.wrap(echo)
     N.clients[client] = handler
     handler(function(...)
@@ -40,5 +39,11 @@ util.auto_loader(_G)
 
 function node.render()
     gl.clear(1,1,1,1)
+
+
+
     util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
+
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
 end
