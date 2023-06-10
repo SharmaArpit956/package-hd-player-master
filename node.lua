@@ -9,6 +9,10 @@ if not N.clients then
 end
 
 node.event("connect", function(client)
+
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
+    
     local handler = coroutine.wrap(echo)
     N.clients[client] = handler
     handler(function(...)
