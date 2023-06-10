@@ -42,8 +42,7 @@ function node.render()
     local font = resource.load_font("silkscreen.ttf")
     font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
 
-    util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
+    -- util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
 
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
+
 end
