@@ -654,3 +654,11 @@ local function send_to_all_clients(data)
         node.client_write(client, data)
     end
 end
+
+
+-- Then later at any point use for example the following.
+-- JSON for encoding makes it easy to send structured data and the
+-- result will end up being a single line, ending in \n sent to all
+-- connected TCP clients.
+local json = require "json"
+send_to_all_clients(json.encode({"foo" = "bar"}))
