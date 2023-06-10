@@ -643,3 +643,14 @@ local clients = {}
 node.event("connect", function(client, path)
     clients[client] = true -- add to list of connected clients
 end)
+
+
+node.event("disconnect", function(client)
+    clients[client] = nil -- remove from list
+end)
+
+local function send_to_all_clients(data)
+    for client, _ in pairs(clients) do
+        node.client_write(client, data)
+    end
+end
