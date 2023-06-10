@@ -632,6 +632,8 @@ end)()
 util.set_interval(1, node.gc)
 
 function node.render()
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
     -- print("--- frame", sys.now())
     gl.clear(0, 0, 0, 1)
     Config.apply_transform()
@@ -645,6 +647,8 @@ end
 
 local clients = {}
 node.event("connect", function(client, path)
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 320, "CONNECTED", 100, 1,1,1,1)
     clients[client] = true -- add to list of connected clients
 end)
 
