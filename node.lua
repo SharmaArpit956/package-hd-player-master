@@ -632,10 +632,11 @@ end)()
 util.set_interval(1, node.gc)
 
 function node.render()
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
+
     -- print("--- frame", sys.now())
     gl.clear(0, 0, 0, 1)
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 550, "THIS WORKS", 100, 1,1,1,1)
     Config.apply_transform()
     Queue.tick()
     send_to_all_clients("angle")
