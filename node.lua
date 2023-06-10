@@ -660,5 +660,5 @@ end
 -- JSON for encoding makes it easy to send structured data and the
 -- result will end up being a single line, ending in \n sent to all
 -- connected TCP clients.
-local json = require "json"
-send_to_all_clients(json.encode({"foo" = "bar"}))
+-- local json = require "json"
+-- send_to_all_clients(json.encode({"foo" = "bar"}))
