@@ -656,9 +656,6 @@ local function send_to_all_clients(data)
 end
 
 
--- Then later at any point use for example the following.
--- JSON for encoding makes it easy to send structured data and the
--- result will end up being a single line, ending in \n sent to all
--- connected TCP clients.
+
 local json = require "json"
-send_to_all_clients(json.encode({"foo" = "bar"}))
+-- send_to_all_clients(json.encode({"foo" = "bar"}))
