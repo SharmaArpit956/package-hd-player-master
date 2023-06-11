@@ -661,11 +661,10 @@ node.event("disconnect", function(client)
 end)
 
 local function send_to_all_clients(data)
-    for client, _ in N.clients do
+    for client, _ in pairs(clients) do
         node.client_write(client, data)
     end
 end
 
-
--- local json = require "json"
--- send_to_all_clients("angles")
+local json = require "json"
+send_to_all_clients(json.encode({"foo" = "bar"}))
