@@ -647,9 +647,10 @@ function node.render()
     local font = resource.load_font("silkscreen.ttf")
     font:write(120, 320, "Hello", 100, 1,1,1,1)
 
+    
 
     local y_axis=300
-    for client, _ in pairs(N.clients) do
+    for client, _ in pairs(clients) do
         font:write(120, y_axis, "Hello World", 10, 1,1,1,1)
         y_axis = y_axis +15
 
@@ -661,28 +662,15 @@ function node.render()
 end
 
 
-if not N.clients then
-    N.clients = {}
-end
-
-node.event("connect", function(client)
-    N.clients[client] = true -- add to list of connected clients
+local clients = {}
+node.event("connect", function(client, path)
+    clients[client] = true -- add to list of connected clients
 end)
-
-
 node.event("disconnect", function(client)
-    N.clients[client] = nil -- remove from list
+    clients[client] = nil -- remove from list
 end)
-
 local function send_to_all_clients(data)
     for client, _ in pairs(clients) do
         node.client_write(client, data)
     end
 end
-
--- local json = require "json"
--- send_to_all_clients(json.encode({"foo" = "bar"}))
-
-
-
-
