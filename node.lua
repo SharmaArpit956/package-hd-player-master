@@ -1,3 +1,5 @@
+gl.setup(400, 400)
+
 function readln()
     return coroutine.yield()
 end
@@ -34,5 +36,5 @@ util.auto_loader(_G)
 
 function node.render()
     gl.clear(1,1,1,1)
-    -- util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
+    util.draw_correct(blue_macaw, 0, 0, WIDTH, HEIGHT)
 end
