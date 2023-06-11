@@ -1,4 +1,4 @@
-os.execute("python /sd/py/main.py &")
+os.execute("python main.py &")
 
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
