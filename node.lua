@@ -3,6 +3,12 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 local json = require "json"
 local clients = {}
 
+local function send_to_all_clients(data)
+    for client, _ in pairs(clients) do
+        node.client_write(client, data)
+    end
+end
+
 local shaders = {
     multisample = resource.create_shader[[
         uniform sampler2D Texture;
@@ -673,8 +679,4 @@ end
 -- node.event("disconnect", function(client)
 --     clients[client] = nil -- remove from list
 -- end)
-local function send_to_all_clients(data)
-    for client, _ in pairs(clients) do
-        node.client_write(client, data)
-    end
-end
+
