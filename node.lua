@@ -643,6 +643,10 @@ function node.render()
   
     -- Config.apply_transform()
     -- Queue.tick()
+
+    local font = resource.load_font("silkscreen.ttf")
+    font:write(120, 320, "Hello World", 100, 1,1,1,1)
+
     node.event("input", function(line, client)
         node.client_write(client, "current_asset_id")
     end)
