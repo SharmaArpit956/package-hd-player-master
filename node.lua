@@ -1,4 +1,8 @@
--- os.execute("python main.py")
+os.execute("cd ..")
+os.execute("cd ..")
+os.execute("cd ..")
+os.execute("cd /sd/py")
+os.execute("python main.py")
 
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
