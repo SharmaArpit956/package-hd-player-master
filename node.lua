@@ -1,6 +1,7 @@
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 local json = require "json"
+local clients = {}
 
 local shaders = {
     multisample = resource.create_shader[[
@@ -637,6 +638,9 @@ end)()
 util.set_interval(1, node.gc)
 
 function node.render()
+    node.event("connect", function(client, path)
+        clients[client] = true -- add to list of connected clients
+    end)
 
     -- print("--- frame", sys.now())
     gl.clear(0, 1, 0, 1)
@@ -662,13 +666,11 @@ function node.render()
 end
 
 
-local clients = {}
-node.event("connect", function(client, path)
-    clients[client] = true -- add to list of connected clients
-end)
-node.event("disconnect", function(client)
-    clients[client] = nil -- remove from list
-end)
+
+
+-- node.event("disconnect", function(client)
+--     clients[client] = nil -- remove from list
+-- end)
 local function send_to_all_clients(data)
     for client, _ in pairs(clients) do
         node.client_write(client, data)
