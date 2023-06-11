@@ -663,7 +663,7 @@ function node.render()
     
     font:write(120, 320, asset_name, 20, 1,1,1,1)
 
-    send_to_all_clients("data2")
+    send_to_all_clients(asset_name)
 end
 
 
