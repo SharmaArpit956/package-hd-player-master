@@ -588,7 +588,7 @@ local Queue = (function()
 
     local function tick()
 
-        send_to_all_clients("Fox")
+        -- send_to_all_clients("Fox")
 
         gl.clear(0, 0, 0, 0)
 
