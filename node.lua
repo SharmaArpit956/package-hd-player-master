@@ -651,8 +651,8 @@ function node.render()
     -- print("--- frame", sys.now())
     gl.clear(0, 1, 0, 1)
   
-    -- Config.apply_transform()
-    -- Queue.tick()
+    Config.apply_transform()
+    Queue.tick()
 
     local font = resource.load_font("silkscreen.ttf")
     font:write(120, 320, "Hello", 100, 1,1,1,1)
@@ -665,12 +665,7 @@ function node.render()
         y_axis = y_axis +15
 
     end
-
     send_to_all_clients("data")
-    -- node.event("input", function(line, client)
-    --     node.client_write(client, "current_asset_id")
-    -- end)
-
 end
 
 
