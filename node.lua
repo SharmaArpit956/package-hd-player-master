@@ -590,8 +590,8 @@ local Queue = (function()
 
         
 
-        send_to_all_clients(json.encode({["foo"] = "bar"}))
-        
+        -- send_to_all_clients(json.encode({["foo"] = "bar"})) doesnt work HERE because OF no reason
+
         gl.clear(0, 0, 0, 0)
 
         if Config.get_synced() then
