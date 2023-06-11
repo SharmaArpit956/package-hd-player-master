@@ -667,4 +667,4 @@ local function send_to_all_clients(data)
 end
 
 local json = require "json"
-send_to_all_clients(json.encode({"foo" = "bar"}))
+-- send_to_all_clients(json.encode({"foo" = "bar"}))
