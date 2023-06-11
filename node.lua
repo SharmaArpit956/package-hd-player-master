@@ -182,7 +182,7 @@ local Config = (function()
                         asset_name = item.file.asset_name,
                         type = item.file.type,
                     }
-                    asset_name = item.file.asset_name
+                    -- asset_name = item.file.asset_name
                     -- font:write(120, 320, asset_name, 20, 1,1,1,1)
                     offset = offset + duration
                 end
@@ -263,7 +263,9 @@ local Scheduler = (function()
 
         local item
         item, playlist_offset = cycled(playlist, playlist_offset)
+        asset_name = item.file.asset_name
         print(string.format("next scheduled item is %s [%f]", item.asset_name, item.duration))
+
         return item
     end
 
