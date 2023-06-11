@@ -653,7 +653,6 @@ function node.render()
         clients[client] = true -- add to list of connected clients
     end)
 
-    -- print("--- frame", sys.now())
     gl.clear(0, 1, 0, 1)
   
     Config.apply_transform()
@@ -662,14 +661,6 @@ function node.render()
     
     font:write(120, 320, asset_name, 20, 1,1,1,1)
 
-    
-
-    local y_axis=300
-    for client, _ in pairs(clients) do
-        font:write(120, y_axis, "Hello World", 10, 1,1,1,1)
-        y_axis = y_axis +15
-
-    end
     send_to_all_clients("data")
 end
 
