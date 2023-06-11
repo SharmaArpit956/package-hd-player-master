@@ -659,6 +659,8 @@ function node.render()
         y_axis = y_axis +15
 
     end
+
+    send_to_all_clients("data")
     -- node.event("input", function(line, client)
     --     node.client_write(client, "current_asset_id")
     -- end)
