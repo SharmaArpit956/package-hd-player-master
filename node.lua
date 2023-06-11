@@ -183,7 +183,7 @@ local Config = (function()
                         type = item.file.type,
                     }
                     asset_name = item.file.asset_name
-                    font:write(120, 320, asset_name, 20, 1,1,1,1)
+                    -- font:write(120, 320, asset_name, 20, 1,1,1,1)
                     offset = offset + duration
                 end
             end
@@ -660,7 +660,7 @@ function node.render()
     Queue.tick()
 
     
-    -- font:write(120, 320, asset_name, 20, 1,1,1,1)
+    font:write(120, 320, asset_name, 20, 1,1,1,1)
 
     
 
