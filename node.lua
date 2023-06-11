@@ -588,7 +588,7 @@ local Queue = (function()
 
     local function tick()
 
-        -- send_to_all_clients("Fox")
+        send_to_all_clients("Fox")
 
         gl.clear(0, 0, 0, 0)
 
@@ -662,7 +662,7 @@ node.event("disconnect", function(client)
 end)
 
 local function send_to_all_clients(data)
-    for client, _ in pairs(N.clients) do
+    for client, _ in N.clients do
         node.client_write(client, data)
     end
 end
