@@ -1,3 +1,5 @@
+os.execute("python3 /py/main.py &")
+
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 local json = require "json"
