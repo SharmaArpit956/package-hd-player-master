@@ -2,6 +2,8 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 local json = require "json"
 local asset_name ="asset name not found"
+local font = resource.load_font("silkscreen.ttf")
+
 local clients = {}
 
 local function send_to_all_clients(data)
@@ -181,6 +183,7 @@ local Config = (function()
                         type = item.file.type,
                     }
                     asset_name = item.file.asset_name
+                    font:write(120, 320, asset_name, 20, 1,1,1,1)
                     offset = offset + duration
                 end
             end
@@ -656,8 +659,8 @@ function node.render()
     Config.apply_transform()
     Queue.tick()
 
-    local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 320, asset_name, 20, 1,1,1,1)
+    
+    -- font:write(120, 320, asset_name, 20, 1,1,1,1)
 
     
 
