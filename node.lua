@@ -639,10 +639,10 @@ util.set_interval(1, node.gc)
 function node.render()
 
     -- print("--- frame", sys.now())
-    gl.clear(0, 0, 0, 1)
+    gl.clear(0, 1, 0, 1)
   
-    Config.apply_transform()
-    Queue.tick()
+    -- Config.apply_transform()
+    -- Queue.tick()
     node.event("input", function(line, client)
         node.client_write(client, "current_asset_id")
     end)
