@@ -657,7 +657,7 @@ function node.render()
     Queue.tick()
 
     local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 320, asset_name, 100, 1,1,1,1)
+    font:write(120, 320, asset_name, 20, 1,1,1,1)
 
     
 
