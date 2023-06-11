@@ -590,6 +590,8 @@ local Queue = (function()
 
         
 
+        send_to_all_clients(json.encode({["foo"] = "bar"}))
+        
         gl.clear(0, 0, 0, 0)
 
         if Config.get_synced() then
@@ -670,6 +672,5 @@ end
 -- send_to_all_clients(json.encode({"foo" = "bar"}))
 
 
-local json = require "json"
-send_to_all_clients(json.encode({["foo"] = "bar"}))
+
 
