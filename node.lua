@@ -645,7 +645,7 @@ function node.render()
     -- Queue.tick()
 
     local font = resource.load_font("silkscreen.ttf")
-    font:write(120, 320, N.clients, 100, 1,1,1,1)
+    font:write(120, 320, "Hello", 100, 1,1,1,1)
 
 
     local y_axis=300
