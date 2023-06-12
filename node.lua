@@ -3,8 +3,46 @@ gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 local json = require "json"
 local asset_name ="asset name not found"
 local font = resource.load_font("silkscreen.ttf")
-
 local clients = {}
+
+
+
+
+
+
+
+node.event("connect", function(client)
+    local handler = coroutine.wrap(get_asset_name)
+    clients[client] = handler
+    handler(function(...)
+        node.client_write(client, ...)
+    end)
+end)
+
+node.event("input", function(line, client)
+    clients[client](line)
+end)
+
+node.event("disconnect", function(client)
+    clients[client] = nil
+end)
+
+function get_asset_name(print)
+    -- print("Hi here")
+    -- while true do
+        -- local line = readln()
+    print(asset_name)
+    -- end
+end
+
+
+
+
+
+
+
+
+
 
 local function send_to_all_clients(data)
     for client, _ in pairs(clients) do
