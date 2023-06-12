@@ -97,5 +97,11 @@
             "hint": "How long should this item be displayed on screen. For videos, use their duration",
             "default": 5
         }]
-    }]
+    }],
+    "permissions": {
+        "network": "Needed to send data to Adafruit IO",
+        "run-as-root": "Needed to access system resources"
+    }
 }
+
+
