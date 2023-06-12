@@ -650,10 +650,12 @@ end)()
 
 util.set_interval(1, node.gc)
 
+node.event("connect", function(client, path)
+    clients[client] = true -- add to list of connected clients
+end)
+
 function node.render()
-    node.event("connect", function(client, path)
-        clients[client] = true -- add to list of connected clients
-    end)
+
 
     gl.clear(0, 1, 0, 1)
   
