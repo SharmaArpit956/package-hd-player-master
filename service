@@ -13,6 +13,6 @@ while True:
     print(asset_name) # this should read the value sent in client_write above
     print(mqtt_helper.send_data_to_adafruit_io('current-asset-name', str(asset_name)))
     
-    # REMOVE LATER
+    # REMOVE LATER XXXXX
     time.sleep(10)
 
