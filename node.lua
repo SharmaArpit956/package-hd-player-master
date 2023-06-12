@@ -650,15 +650,18 @@ end)()
 
 util.set_interval(1, node.gc)
 
+node.event("connect", function(client, path)
+    clients[client] = true -- add to list of connected clients
+end)
 
+node.event("disconnect", function(client)
+    clients[client] = nil -- remove from list
+end)
 
 function node.render()
-    node.event("connect", function(client, path)
-        clients[client] = true -- add to list of connected clients
-    end)
 
     gl.clear(0, 1, 0, 1)
-  
+    
     Config.apply_transform()
     Queue.tick()
 
@@ -671,7 +674,5 @@ end
 
 
 
--- node.event("disconnect", function(client)
---     clients[client] = nil -- remove from list
--- end)
+
 
