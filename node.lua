@@ -666,7 +666,7 @@ function node.render()
     Queue.tick()
 
     
-    font:write(120, 320, asset_name, 80, 1,1,1,1)
+    -- font:write(120, 320, asset_name, 80, 1,1,1,1)
 
     send_to_all_clients(asset_name)
 end
