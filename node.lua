@@ -263,10 +263,13 @@ local Scheduler = (function()
         item, playlist_offset = cycled(playlist, playlist_offset)
 
         local str = item.asset_name
-        asset_name = string.match(str, "-(%w+).mp4")
+
+        -- asset_name = string.match(str, "-(%w+).mp4")
+
+        asset_name = string.match(str, "-(%w+)%.(%w+)")
 
         -- TRIAL
-        asset_name= item.asset_name    
+        -- asset_name= item.asset_name    
 
         print(string.format("next scheduled item is %s [%f]", item.asset_name, item.duration))
 
